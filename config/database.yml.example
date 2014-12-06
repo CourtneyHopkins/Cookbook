@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: rails
+  password:
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: cookbook_development
+
+test:
+  <<: *default
+  database: cookbook_test

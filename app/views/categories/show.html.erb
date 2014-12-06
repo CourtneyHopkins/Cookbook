@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<h3>Recipes</h3>
+<ul>
+  <%  @category.recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a new Category', new_recipe_path(category_id: @category.id) %><br><br>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
